@@ -72,3 +72,10 @@ O formulário funciona como uma demonstração front-end. Ele valida os dados e 
 
 `Beat, electronic`, por beat, obtida no Wikimedia Commons e disponibilizada em domínio público:
 https://commons.wikimedia.org/wiki/File:Beat_electronic.ogg
+
+## 💻 Como executar o projeto localmente
+
+1. Faça o clone deste repositório:
+   ```bash
+   git clone [https://github.com/bllacerenza-a11y/Melodia-Site-CP5-FRONTEND](https://github.com/bllacerenza-a11y/Melodia-Site-CP5-FRONTEND)
+2. Link do pages: [https://bllacerenza-a11y.github.io/Melodia-Site-CP5-FRONTEND/]
