@@ -8,365 +8,200 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: '#10100f',
-            paper: '#f3f0e8',
-            acid: '#dfff43',
-            cobalt: '#304ffe',
-            coral: '#ff5b4d'
-          },
-          fontFamily: {
-            display: ['Archivo Black', 'sans-serif'],
-            body: ['DM Sans', 'sans-serif']
-          }
-        }
-      }
-    };
-  </script>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%2310100f'/%3E%3Cpath d='M18 42V18h6l8 12 8-12h6v24h-7V29l-7 10-7-10v13z' fill='%23dfff43'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2310100f'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='34' font-family='Arial' font-weight='bold' fill='%23dfff43'%3EM%3C/text%3E%3C/svg%3E">
 </head>
-<body class="bg-paper font-body text-ink antialiased">
-  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
 
-  <header id="cabecalho" class="site-header fixed inset-x-0 top-0 z-50 border-b border-transparent">
-    <nav class="mx-auto flex max-w-[1480px] items-center justify-between px-5 py-4 md:px-10" aria-label="Navegação principal">
-      <a href="#inicio" class="brand-mark" aria-label="Melodia, início">
-        <span class="brand-icon" aria-hidden="true">M</span>
-        <span class="font-display text-xl tracking-[-0.04em]">MELODIA</span>
+<body class="bg-[#f3f0e8] font-['DM_Sans'] text-[#10100f] antialiased">
+  <a href="#conteudo" class="fixed -top-20 left-4 z-[60] bg-[#dfff43] px-4 py-3 font-bold focus:top-4">Pular para o conteúdo</a>
+
+  <header id="cabecalho" class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition duration-300">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-10" aria-label="Navegação principal">
+      <a href="#inicio" class="flex items-center gap-3" aria-label="Melodia, página inicial">
+        <span class="grid h-10 w-10 place-items-center bg-[#10100f] font-['Archivo_Black'] text-[#dfff43]">M</span>
+        <span class="font-['Archivo_Black'] text-xl tracking-tight">MELODIA</span>
       </a>
 
-      <button id="botao-menu" class="menu-button md:hidden" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
-        <span></span>
-        <span></span>
+      <button id="botao-menu" type="button" class="grid h-11 w-11 place-items-center border-2 border-[#10100f] bg-[#dfff43] text-xl md:hidden" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
       </button>
 
-      <div id="menu-principal" class="nav-links hidden items-center gap-7 md:flex">
-        <a href="#beneficios">Por que Melodia</a>
-        <a href="#funcionalidades">Funcionalidades</a>
-        <a href="#depoimentos">Quem já ouviu</a>
-        <a href="#contato" class="nav-cta">Começar agora</a>
+      <div id="menu-principal" class="absolute left-5 right-5 top-[76px] hidden flex-col gap-1 border-2 border-[#10100f] bg-[#f3f0e8] p-3 shadow-[6px_6px_0_#10100f] md:static md:flex md:flex-row md:items-center md:gap-7 md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+        <a href="#beneficios" class="p-3 font-bold hover:text-[#304ffe] md:p-0">Benefícios</a>
+        <a href="#funcionalidades" class="p-3 font-bold hover:text-[#304ffe] md:p-0">Funcionalidades</a>
+        <a href="#depoimentos" class="p-3 font-bold hover:text-[#304ffe] md:p-0">Depoimentos</a>
+        <a href="#contato" class="bg-[#10100f] p-3 text-center font-bold text-white hover:bg-[#304ffe] md:px-5 md:py-3">Começar agora</a>
       </div>
     </nav>
   </header>
 
   <main id="conteudo">
-    <section id="inicio" class="hero-section min-h-screen overflow-hidden pt-24">
-      <div class="mx-auto grid min-h-[calc(100vh-6rem)] max-w-[1480px] grid-cols-1 items-center gap-10 px-5 pb-10 md:px-10 lg:grid-cols-[1.08fr_.92fr] lg:gap-16">
-        <div class="hero-copy relative z-10 py-8 lg:py-14">
-          <p class="eyebrow mb-7">Um novo jeito de descobrir música</p>
-          <h1 class="font-display text-[clamp(4rem,10vw,9.4rem)] leading-[0.8] tracking-[-0.075em]">
-            SUA MÚSICA,<br>
-            <span class="text-cobalt">SUA FORMA.</span>
+    <section id="inicio" class="min-h-screen pt-24">
+      <div class="mx-auto grid min-h-[calc(100vh-6rem)] max-w-7xl items-center gap-12 px-5 py-10 md:px-10 lg:grid-cols-2">
+        <div>
+          <p class="mb-6 text-sm font-bold uppercase tracking-[0.18em] text-[#304ffe]">Um novo jeito de descobrir música</p>
+          <h1 class="font-['Archivo_Black'] text-[clamp(3.6rem,9vw,8rem)] leading-[0.82] tracking-[-0.07em]">
+            MELODIA:<br>SUA MÚSICA,<br><span class="text-[#304ffe]">SUA FORMA.</span>
           </h1>
-          <p class="mt-8 max-w-xl text-lg leading-relaxed text-ink/75 md:text-xl">
-            Playlists que entendem seu momento, artistas novos antes de todo mundo e som com cada detalhe no lugar.
+          <p class="mt-8 max-w-xl text-lg leading-relaxed text-[#10100f]/70 md:text-xl">
+            Playlists para cada momento, novos artistas e qualidade de som para ouvir cada detalhe.
           </p>
-
-          <div class="mt-9 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
-            <a href="#funcionalidades" class="primary-cta group">
-              <span>Ouvir agora</span>
-              <i class="fa-solid fa-play" aria-hidden="true"></i>
+          <div class="mt-8 flex flex-wrap items-center gap-5">
+            <a href="#player" class="flex items-center gap-3 bg-[#10100f] px-6 py-4 font-bold uppercase tracking-wide text-white transition hover:-translate-y-1 hover:bg-[#304ffe]">
+              Ouvir agora <i class="fa-solid fa-play" aria-hidden="true"></i>
             </a>
-            <a href="#beneficios" class="text-link">
-              Conheça o Melodia
-              <span aria-hidden="true">↘</span>
-            </a>
+            <a href="#beneficios" class="border-b-2 border-[#10100f] py-2 font-bold hover:border-[#304ffe] hover:text-[#304ffe]">Conhecer o aplicativo</a>
           </div>
-
-          <div class="hero-proof mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-ink/20 pt-6 text-sm font-semibold uppercase tracking-[0.13em]">
-            <span>Áudio em alta definição</span>
-            <span>Sem anúncios</span>
-            <span>Feito para descobrir</span>
+          <div class="mt-10 flex flex-wrap gap-5 border-t border-[#10100f]/20 pt-5 text-xs font-bold uppercase tracking-widest">
+            <span>Áudio em alta definição</span><span>Sem anúncios</span><span>Novas descobertas</span>
           </div>
         </div>
 
-        <div class="hero-visual relative min-h-[540px] lg:min-h-[720px]">
-          <div class="hero-image-frame absolute inset-0 overflow-hidden">
-            <img src="assets/studio-melodia.jpg" alt="Artista em estúdio cercada por equipamentos musicais e luzes coloridas" class="h-full w-full object-cover" fetchpriority="high">
-          </div>
-
-          <div class="track-strip absolute inset-x-4 bottom-5 grid grid-cols-[auto_1fr_auto] items-center gap-4 bg-acid p-4 text-ink md:inset-x-[-1.5rem] md:bottom-8 md:p-5">
-            <audio id="audio-faixa" preload="metadata">
+        <div class="relative min-h-[520px] lg:min-h-[680px]">
+          <img src="assets/studio-melodia.jpg" alt="Artista em um estúdio musical" class="absolute inset-0 h-full w-full object-cover">
+          <div id="player" class="absolute bottom-5 left-4 right-4 border-2 border-[#10100f] bg-[#dfff43] p-4 shadow-[8px_8px_0_#10100f] md:-left-6 md:right-6 md:p-5">
+            <div class="mb-3 flex items-center justify-between gap-4">
+              <div><p class="text-xs font-bold uppercase tracking-widest">Faixa de demonstração</p><p class="mt-1 font-bold">Beat, electronic — beat</p></div>
+              <i class="fa-solid fa-wave-square text-2xl text-[#304ffe]" aria-hidden="true"></i>
+            </div>
+            <audio controls preload="metadata" class="w-full">
               <source src="assets/beat-electronic.ogg" type="audio/ogg">
               Seu navegador não suporta reprodução de áudio.
             </audio>
-            <button class="track-play" type="button" aria-label="Reproduzir Beat, electronic">
-              <i class="fa-solid fa-play" aria-hidden="true"></i>
-            </button>
-            <div>
-              <p class="text-xs font-bold uppercase tracking-[0.18em]">Tocando agora</p>
-              <p class="mt-1 text-lg font-bold">Beat, electronic — beat</p>
-            </div>
-            <span id="tempo-faixa" class="track-time font-display text-lg" aria-live="off">0:00 / 2:01</span>
-            <label class="sr-only" for="progresso-faixa">Progresso da faixa</label>
-            <input id="progresso-faixa" class="track-progress" type="range" min="0" max="100" value="0" step="0.1">
-          </div>
-
-          <div class="hero-stamp absolute right-[-1rem] top-6 hidden h-32 w-32 place-items-center bg-coral text-center font-display text-sm leading-tight text-paper lg:grid">
-            DESCUBRA<br>NOVOS<br>SONS
           </div>
         </div>
       </div>
     </section>
 
-    <div class="sound-ticker" aria-hidden="true">
-      <div class="sound-ticker-track">
-        <span>PLAYLISTS PARA CADA MOMENTO</span><i class="fa-solid fa-asterisk"></i>
-        <span>NOVOS ARTISTAS TODOS OS DIAS</span><i class="fa-solid fa-asterisk"></i>
-        <span>SOM QUE PREENCHE O AMBIENTE</span><i class="fa-solid fa-asterisk"></i>
-        <span>PLAYLISTS PARA CADA MOMENTO</span><i class="fa-solid fa-asterisk"></i>
-        <span>NOVOS ARTISTAS TODOS OS DIAS</span><i class="fa-solid fa-asterisk"></i>
+    <div class="overflow-hidden border-y-2 border-[#10100f] bg-[#dfff43] py-4" aria-hidden="true">
+      <div class="ticker flex w-max items-center gap-8 font-['Archivo_Black'] text-lg md:text-2xl">
+        <span>PLAYLISTS PARA CADA MOMENTO</span><i class="fa-solid fa-asterisk"></i><span>NOVOS ARTISTAS TODOS OS DIAS</span><i class="fa-solid fa-asterisk"></i><span>SOM COM MAIS DETALHES</span><i class="fa-solid fa-asterisk"></i>
+        <span>PLAYLISTS PARA CADA MOMENTO</span><i class="fa-solid fa-asterisk"></i><span>NOVOS ARTISTAS TODOS OS DIAS</span><i class="fa-solid fa-asterisk"></i><span>SOM COM MAIS DETALHES</span><i class="fa-solid fa-asterisk"></i>
       </div>
     </div>
 
-    <section id="beneficios" class="section-space bg-paper">
-      <div class="mx-auto max-w-[1480px] px-5 md:px-10">
-        <div class="section-heading grid gap-6 border-b-2 border-ink pb-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
-          <p class="section-index">01 / POR QUE MELODIA</p>
-          <h2 class="font-display text-[clamp(2.8rem,6vw,6rem)] leading-[0.92] tracking-[-0.055em]">
-            MÚSICA QUE ACOMPANHA<br><span class="text-cobalt">O SEU RITMO.</span>
-          </h2>
+    <section id="beneficios" class="px-5 py-24 md:px-10 lg:py-36">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-6 border-b-2 border-[#10100f] pb-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+          <p class="text-sm font-bold uppercase tracking-widest">01 / Por que Melodia</p>
+          <h2 class="font-['Archivo_Black'] text-[clamp(2.7rem,6vw,5.8rem)] leading-[0.9] tracking-[-0.05em]">MÚSICA QUE ACOMPANHA <span class="text-[#304ffe]">O SEU RITMO.</span></h2>
         </div>
 
-        <div class="benefits-list">
-          <article class="benefit-item">
-            <span class="benefit-number">01</span>
-            <i class="fa-solid fa-wave-square" aria-hidden="true"></i>
-            <div>
-              <h3>Som com mais detalhes</h3>
-              <p>Qualidade de áudio para perceber cada batida, voz e instrumento com clareza.</p>
-            </div>
+        <div class="grid gap-px bg-[#10100f] md:grid-cols-2 lg:grid-cols-4">
+          <article class="bg-[#f3f0e8] p-7 transition hover:bg-[#dfff43]">
+            <i class="fa-solid fa-wave-square text-4xl text-[#304ffe]" aria-hidden="true"></i><h3 class="mt-8 font-['Archivo_Black'] text-2xl">Som superior</h3><p class="mt-3 leading-relaxed text-[#10100f]/70">Ouça vozes, instrumentos e batidas com mais clareza.</p>
           </article>
-
-          <article class="benefit-item">
-            <span class="benefit-number">02</span>
-            <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
-            <div>
-              <h3>Descobertas que fazem sentido</h3>
-              <p>Recomendações baseadas no que você ouve, sem deixar as novidades de fora.</p>
-            </div>
+          <article class="bg-[#f3f0e8] p-7 transition hover:bg-[#dfff43]">
+            <i class="fa-solid fa-wand-magic-sparkles text-4xl text-[#304ffe]" aria-hidden="true"></i><h3 class="mt-8 font-['Archivo_Black'] text-2xl">Novas descobertas</h3><p class="mt-3 leading-relaxed text-[#10100f]/70">Encontre artistas relacionados ao que você já gosta.</p>
           </article>
-
-          <article class="benefit-item">
-            <span class="benefit-number">03</span>
-            <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
-            <div>
-              <h3>Playlists do seu jeito</h3>
-              <p>Crie, edite e organize trilhas para estudar, treinar, viajar ou desacelerar.</p>
-            </div>
+          <article class="bg-[#f3f0e8] p-7 transition hover:bg-[#dfff43]">
+            <i class="fa-solid fa-list-ul text-4xl text-[#304ffe]" aria-hidden="true"></i><h3 class="mt-8 font-['Archivo_Black'] text-2xl">Suas playlists</h3><p class="mt-3 leading-relaxed text-[#10100f]/70">Organize músicas para estudar, treinar ou relaxar.</p>
           </article>
-
-          <article class="benefit-item">
-            <span class="benefit-number">04</span>
-            <i class="fa-solid fa-bolt" aria-hidden="true"></i>
-            <div>
-              <h3>Simples desde o primeiro play</h3>
-              <p>Uma interface direta para encontrar música rápido e continuar ouvindo.</p>
-            </div>
+          <article class="bg-[#f3f0e8] p-7 transition hover:bg-[#dfff43]">
+            <i class="fa-solid fa-bolt text-4xl text-[#304ffe]" aria-hidden="true"></i><h3 class="mt-8 font-['Archivo_Black'] text-2xl">Interface simples</h3><p class="mt-3 leading-relaxed text-[#10100f]/70">Encontre o que deseja sem menus complicados.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="funcionalidades" class="section-space overflow-hidden bg-ink text-paper">
-      <div class="mx-auto max-w-[1480px] px-5 md:px-10">
-        <div class="section-heading grid gap-6 border-b border-paper/30 pb-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
-          <p class="section-index text-acid">02 / FUNCIONALIDADES</p>
-          <h2 class="font-display text-[clamp(2.8rem,6vw,6rem)] leading-[0.92] tracking-[-0.055em]">
-            MENOS PROCURA.<br><span class="text-acid">MAIS PLAY.</span>
-          </h2>
+    <section id="funcionalidades" class="bg-[#10100f] px-5 py-24 text-[#f3f0e8] md:px-10 lg:py-36">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-6 border-b border-white/30 pb-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+          <p class="text-sm font-bold uppercase tracking-widest text-[#dfff43]">02 / Funcionalidades</p>
+          <h2 class="font-['Archivo_Black'] text-[clamp(2.7rem,6vw,5.8rem)] leading-[0.9] tracking-[-0.05em]">MENOS PROCURA.<br><span class="text-[#dfff43]">MAIS PLAY.</span></h2>
         </div>
 
-        <div class="feature-story feature-story-first">
-          <div class="feature-copy">
-            <span class="feature-tag">Seu som, organizado</span>
-            <h3>Playlists que começam com uma ideia.</h3>
-            <p>Escolha um clima, uma atividade ou um artista. O Melodia ajuda a montar a sequência e você decide o que fica.</p>
-            <ul>
-              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Capas personalizadas</li>
-              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Ordem fácil de editar</li>
-              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Playlists colaborativas</li>
-            </ul>
-          </div>
-
-          <div class="playlist-demo" aria-label="Exemplo visual de uma playlist no aplicativo">
-            <div class="playlist-header">
-              <span>PLAYLIST / 01</span>
-              <i class="fa-solid fa-ellipsis"></i>
+        <div class="grid gap-6 py-14 lg:grid-cols-3">
+          <article class="border border-white/30 p-6 transition hover:-translate-y-2 hover:border-[#dfff43]">
+            <div class="mb-8 aspect-square border-2 border-[#10100f] bg-[#ff5b4d] p-6 text-[#10100f] shadow-[8px_8px_0_#304ffe]">
+              <p class="text-xs font-bold uppercase tracking-widest">Playlist / 01</p>
+              <div class="mt-8 grid h-2/3 place-items-center bg-[#304ffe] text-center font-['Archivo_Black'] text-5xl leading-[0.8] text-[#dfff43]">SEM<br>PRESSA</div>
+              <div class="mt-5 flex justify-between text-lg"><i class="fa-solid fa-backward-step"></i><i class="fa-solid fa-circle-play text-3xl"></i><i class="fa-solid fa-forward-step"></i></div>
             </div>
-            <div class="playlist-cover">
-              <div class="cover-type">SEM<br>PRESSA</div>
-              <div class="cover-circle"></div>
-            </div>
-            <p class="playlist-name">Fim de tarde</p>
-            <p class="playlist-meta">18 faixas · 1h 04min</p>
-            <div class="playlist-progress"><span></span></div>
-            <div class="playlist-controls">
-              <i class="fa-solid fa-shuffle"></i>
-              <i class="fa-solid fa-backward-step"></i>
-              <span class="control-main"><i class="fa-solid fa-pause"></i></span>
-              <i class="fa-solid fa-forward-step"></i>
-              <i class="fa-solid fa-repeat"></i>
-            </div>
-          </div>
-        </div>
+            <p class="text-xs font-bold uppercase tracking-widest text-[#dfff43]">Playlists personalizadas</p><h3 class="mt-4 font-['Archivo_Black'] text-3xl">Comece com uma ideia.</h3><p class="mt-4 leading-relaxed text-white/65">Escolha um clima ou atividade e organize a sequência do seu jeito.</p>
+          </article>
 
-        <div class="feature-story feature-story-image">
-          <div class="discovery-image">
-            <img src="assets/show-melodia.jpg" alt="Público curtindo uma apresentação musical com luzes coloridas" loading="lazy">
-            <p class="image-credit">Foto: Jessica Christian / Unsplash</p>
-          </div>
-          <div class="feature-copy">
-            <span class="feature-tag">Descoberta diária</span>
-            <h3>O próximo artista favorito pode estar aqui.</h3>
-            <p>Novos lançamentos, cenas locais e seleções feitas para ampliar o que você já gosta de ouvir.</p>
-            <a href="#contato" class="inline-action">Quero descobrir <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
+          <article class="border border-white/30 p-6 transition hover:-translate-y-2 hover:border-[#dfff43]">
+            <img src="assets/show-melodia.jpg" alt="Público em uma apresentação musical" loading="lazy" class="aspect-square w-full object-cover grayscale transition duration-500 hover:grayscale-0">
+            <p class="mt-8 text-xs font-bold uppercase tracking-widest text-[#dfff43]">Descoberta diária</p><h3 class="mt-4 font-['Archivo_Black'] text-3xl">Conheça novos artistas.</h3><p class="mt-4 leading-relaxed text-white/65">Veja lançamentos e cenas locais relacionados ao seu gosto musical.</p>
+          </article>
 
-        <div class="feature-story sound-quality-story">
-          <div class="feature-copy">
-            <span class="feature-tag">Qualidade superior</span>
-            <h3>Cada detalhe merece ser ouvido.</h3>
-            <p>Do grave mais profundo ao vocal mais delicado, o Melodia preserva a intenção de cada faixa.</p>
-          </div>
-          <div class="equalizer" aria-hidden="true">
-            <span style="--height: 38%"></span>
-            <span style="--height: 72%"></span>
-            <span style="--height: 48%"></span>
-            <span style="--height: 92%"></span>
-            <span style="--height: 62%"></span>
-            <span style="--height: 100%"></span>
-            <span style="--height: 54%"></span>
-            <span style="--height: 78%"></span>
-            <span style="--height: 42%"></span>
-            <span style="--height: 68%"></span>
-            <span style="--height: 32%"></span>
-            <span style="--height: 58%"></span>
-          </div>
+          <article class="border border-white/30 p-6 transition hover:-translate-y-2 hover:border-[#dfff43]">
+            <div class="flex aspect-square items-end gap-2 bg-[#dfff43] p-7" aria-hidden="true">
+              <span class="h-1/3 flex-1 bg-[#304ffe]"></span><span class="h-3/4 flex-1 bg-[#304ffe]"></span><span class="h-1/2 flex-1 bg-[#304ffe]"></span><span class="h-full flex-1 bg-[#304ffe]"></span><span class="h-2/3 flex-1 bg-[#304ffe]"></span><span class="h-4/5 flex-1 bg-[#304ffe]"></span>
+            </div>
+            <p class="mt-8 text-xs font-bold uppercase tracking-widest text-[#dfff43]">Qualidade de áudio</p><h3 class="mt-4 font-['Archivo_Black'] text-3xl">Ouça cada detalhe.</h3><p class="mt-4 leading-relaxed text-white/65">Uma experiência sonora clara para fones, caixas e diferentes ambientes.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="depoimentos" class="section-space bg-cobalt text-white">
-      <div class="mx-auto max-w-[1480px] px-5 md:px-10">
-        <div class="grid gap-6 border-b border-white/40 pb-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
-          <p class="section-index text-acid">03 / QUEM JÁ OUVIU</p>
-          <h2 class="font-display text-[clamp(2.8rem,6vw,6rem)] leading-[0.92] tracking-[-0.055em]">
-            O SOM CHEGA<br>DIFERENTE.
-          </h2>
+    <section id="depoimentos" class="bg-[#304ffe] px-5 py-24 text-white md:px-10 lg:py-36">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-6 border-b border-white/40 pb-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+          <p class="text-sm font-bold uppercase tracking-widest text-[#dfff43]">03 / Depoimentos</p>
+          <h2 class="font-['Archivo_Black'] text-[clamp(2.7rem,6vw,5.8rem)] leading-[0.9] tracking-[-0.05em]">QUEM JÁ ENTROU NO RITMO.</h2>
         </div>
 
-        <div class="testimonials-layout">
-          <blockquote class="testimonial-main">
-            <span class="quote-mark" aria-hidden="true">“</span>
-            <p>Eu entrei para montar uma playlist de estudos e terminei descobrindo três artistas que agora escuto toda semana.</p>
-            <footer>
-              <img src="assets/perfil-larissa.jpg" alt="Foto de perfil de Larissa" loading="lazy">
-              <div><strong>Larissa M.</strong><span>São Paulo, SP</span></div>
-            </footer>
+        <div class="grid border-b border-white/40 lg:grid-cols-3">
+          <blockquote class="border-white/40 py-10 lg:border-r lg:pr-8">
+            <p class="font-['Archivo_Black'] text-2xl leading-snug">“Montei uma playlist de estudos e descobri artistas que agora ouço toda semana.”</p>
+            <footer class="mt-8 flex items-center gap-4"><img src="assets/perfil-larissa.jpg" alt="Foto de Larissa" loading="lazy" class="h-14 w-14 rounded-full border-2 border-[#dfff43] object-cover"><div><strong>Larissa M.</strong><span class="block text-sm text-white/65">São Paulo, SP</span></div></footer>
           </blockquote>
-
-          <div class="testimonial-side">
-            <blockquote>
-              <p>“A navegação é rápida e as recomendações não parecem sempre as mesmas.”</p>
-              <footer>
-                <img src="assets/perfil-caio.jpg" alt="Foto de perfil de Caio" loading="lazy">
-                <div><strong>Caio R.</strong><span>Salvador, BA</span></div>
-              </footer>
-            </blockquote>
-            <blockquote>
-              <p>“As playlists por momento facilitam muito quando quero ouvir algo sem perder tempo.”</p>
-              <footer>
-                <img src="assets/perfil-beatriz.jpg" alt="Foto de perfil de Beatriz" loading="lazy">
-                <div><strong>Beatriz L.</strong><span>Curitiba, PR</span></div>
-              </footer>
-            </blockquote>
-          </div>
+          <blockquote class="border-t border-white/40 py-10 lg:border-r lg:border-t-0 lg:px-8">
+            <p class="font-['Archivo_Black'] text-2xl leading-snug">“A navegação é rápida e as recomendações não parecem sempre as mesmas.”</p>
+            <footer class="mt-8 flex items-center gap-4"><img src="assets/perfil-caio.jpg" alt="Foto de Caio" loading="lazy" class="h-14 w-14 rounded-full border-2 border-[#dfff43] object-cover"><div><strong>Caio R.</strong><span class="block text-sm text-white/65">Salvador, BA</span></div></footer>
+          </blockquote>
+          <blockquote class="border-t border-white/40 py-10 lg:border-t-0 lg:pl-8">
+            <p class="font-['Archivo_Black'] text-2xl leading-snug">“As playlists por momento ajudam quando quero ouvir algo sem perder tempo.”</p>
+            <footer class="mt-8 flex items-center gap-4"><img src="assets/perfil-beatriz.jpg" alt="Foto de Beatriz" loading="lazy" class="h-14 w-14 rounded-full border-2 border-[#dfff43] object-cover"><div><strong>Beatriz L.</strong><span class="block text-sm text-white/65">Curitiba, PR</span></div></footer>
+          </blockquote>
         </div>
       </div>
     </section>
 
-    <section id="contato" class="contact-section bg-acid text-ink">
-      <div class="mx-auto grid max-w-[1480px] gap-10 px-5 py-20 md:px-10 lg:grid-cols-[1fr_.8fr] lg:items-end lg:py-28">
-        <div>
-          <p class="section-index">04 / ENTRE NA LISTA</p>
-          <h2 class="mt-6 max-w-4xl font-display text-[clamp(3.2rem,7.5vw,7.5rem)] leading-[0.84] tracking-[-0.065em]">
-            SEU PRÓXIMO SOM COMEÇA AQUI.
-          </h2>
-        </div>
-
-        <div>
-          <p class="mb-7 max-w-xl text-lg leading-relaxed">
-            Cadastre seu e-mail para receber novidades, playlists especiais e acesso antecipado ao Melodia.
-          </p>
-          <form id="formulario-contato" class="contact-form" novalidate>
-            <label for="email">Seu melhor e-mail</label>
-            <div class="email-row">
-              <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" required aria-describedby="mensagem-formulario">
-              <button type="submit">Quero conhecer <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+    <section id="contato" class="bg-[#dfff43] px-5 py-24 md:px-10 lg:py-32">
+      <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-end">
+        <div><p class="text-sm font-bold uppercase tracking-widest">04 / Entre na lista</p><h2 class="mt-6 font-['Archivo_Black'] text-[clamp(3rem,7vw,6.5rem)] leading-[0.85] tracking-[-0.06em]">SEU PRÓXIMO SOM COMEÇA AQUI.</h2></div>
+        <form id="formulario-contato" class="space-y-5">
+          <div>
+            <label for="email" class="mb-2 block text-sm font-bold uppercase tracking-widest">Seu melhor e-mail</label>
+            <div class="grid border-2 border-[#10100f] bg-white shadow-[7px_7px_0_#10100f] sm:grid-cols-[1fr_auto]">
+              <input id="email" name="email" type="email" autocomplete="email" required placeholder="voce@exemplo.com" class="min-w-0 bg-transparent p-4 outline-none placeholder:text-[#10100f]/40 focus:ring-4 focus:ring-[#304ffe]/30">
+              <button type="submit" class="border-t-2 border-[#10100f] bg-[#304ffe] px-6 py-4 font-bold uppercase tracking-wide text-white hover:bg-[#ff5b4d] sm:border-l-2 sm:border-t-0">Quero conhecer <i class="fa-solid fa-arrow-right ml-2" aria-hidden="true"></i></button>
             </div>
-            <label class="consent-row" for="consentimento">
-              <input id="consentimento" name="consentimento" type="checkbox" required>
-              <span>Concordo em receber novidades e posso cancelar quando quiser.</span>
-            </label>
-            <p id="mensagem-formulario" class="form-message" aria-live="polite"></p>
-          </form>
-        </div>
+          </div>
+          <label class="flex items-start gap-3 text-sm leading-relaxed"><input id="consentimento" name="consentimento" type="checkbox" required class="mt-1 h-4 w-4 accent-[#304ffe]"><span>Concordo em receber novidades e posso cancelar quando quiser.</span></label>
+          <p id="mensagem-formulario" class="min-h-6 font-bold" aria-live="polite"></p>
+        </form>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer bg-ink text-paper">
-    <div class="mx-auto max-w-[1480px] px-5 py-12 md:px-10">
-      <div class="grid gap-10 border-b border-paper/25 pb-10 md:grid-cols-[1.3fr_.7fr_.7fr]">
+  <footer class="bg-[#10100f] px-5 py-12 text-[#f3f0e8] md:px-10">
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-10 border-b border-white/20 pb-10 md:grid-cols-3">
         <div>
-          <a href="#inicio" class="brand-mark text-paper" aria-label="Melodia, voltar ao início">
-            <span class="brand-icon">M</span>
-            <span class="font-display text-2xl tracking-[-0.04em]">MELODIA</span>
-          </a>
-          <p class="mt-5 max-w-sm text-paper/65">Sua música, sua forma. Descubra, organize e ouça sem complicação.</p>
+          <a href="#inicio" class="flex items-center gap-3"><span class="grid h-10 w-10 place-items-center bg-[#dfff43] font-['Archivo_Black'] text-[#10100f]">M</span><span class="font-['Archivo_Black'] text-2xl">MELODIA</span></a>
+          <p class="mt-5 max-w-sm text-white/60">Sua música, sua forma. Descubra e organize novos sons sem complicação.</p>
         </div>
+        <div><p class="font-bold uppercase tracking-widest text-[#dfff43]">Contato</p><a href="mailto:contato@melodia.app" class="mt-4 block text-white/65 hover:text-[#dfff43]">contato@melodia.app</a><a href="tel:+551140028922" class="mt-2 block text-white/65 hover:text-[#dfff43]">+55 11 4002-8922</a></div>
         <div>
-          <p class="footer-title">Contato</p>
-          <a href="mailto:contato@melodia.app">contato@melodia.app</a>
-          <a href="tel:+551140028922">+55 11 4002-8922</a>
-        </div>
-        <div>
-          <p class="footer-title">Siga o ritmo</p>
-          <div class="social-links">
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <p class="font-bold uppercase tracking-widest text-[#dfff43]">Redes sociais</p>
+          <div class="mt-4 flex gap-3 text-xl">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="grid h-11 w-11 place-items-center border border-white/30 hover:bg-[#dfff43] hover:text-[#10100f]"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="grid h-11 w-11 place-items-center border border-white/30 hover:bg-[#dfff43] hover:text-[#10100f]"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="grid h-11 w-11 place-items-center border border-white/30 hover:bg-[#dfff43] hover:text-[#10100f]"><i class="fa-brands fa-youtube"></i></a>
           </div>
         </div>
       </div>
-      <div class="flex flex-col gap-4 pt-7 text-sm text-paper/55 sm:flex-row sm:items-center sm:justify-between">
-        <p>© 2026 Melodia. Projeto acadêmico.</p>
-        <button id="abrir-privacidade" type="button" class="privacy-button">Política de privacidade</button>
-      </div>
+      <div id="privacidade" class="border-b border-white/20 py-7 text-sm leading-relaxed text-white/55"><strong class="text-white">Política de privacidade:</strong> este projeto acadêmico não envia nem armazena o e-mail informado no formulário.</div>
+      <p class="pt-7 text-sm text-white/45">© 2026 Melodia. Projeto acadêmico da equipe FutureCall.</p>
     </div>
   </footer>
-
-  <dialog id="modal-privacidade" class="privacy-dialog">
-    <div class="privacy-dialog-content">
-      <button id="fechar-privacidade" class="dialog-close" type="button" aria-label="Fechar política de privacidade">
-        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-      </button>
-      <p class="section-index text-cobalt">PRIVACIDADE</p>
-      <h2>Seus dados continuam seus.</h2>
-      <p>Este projeto acadêmico não envia nem armazena o e-mail informado. Em uma aplicação real, os dados seriam usados apenas para as comunicações autorizadas no formulário.</p>
-      <p>Você poderia cancelar o recebimento das mensagens a qualquer momento.</p>
-    </div>
-  </dialog>
 
   <script src="script.js"></script>
 </body>
