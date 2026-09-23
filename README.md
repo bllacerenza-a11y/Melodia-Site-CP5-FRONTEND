@@ -1,6 +1,8 @@
 # Melodia
 
-Landing page responsiva criada para apresentar o aplicativo fictício de música Melodia. A página mostra benefícios, funcionalidades, depoimentos, uma faixa de demonstração e um formulário para cadastro de e-mail.
+O Melodia é uma landing page responsiva criada para apresentar um aplicativo fictício de música voltado para jovens e pessoas que gostam de descobrir novos artistas e organizar suas experiências musicais. O objetivo da página é divulgar o aplicativo de forma clara e convidar o visitante a conhecer a plataforma por meio do botão “Ouvir Agora”.
+
+O site apresenta os principais benefícios e funcionalidades do aplicativo, uma demonstração de áudio, depoimentos de usuários e um formulário para cadastro de e-mail. O projeto também conta com navegação adaptada para celulares, tablets e computadores, mantendo uma identidade visual moderna, vibrante e relacionada ao universo musical.
 
 ## Links
 
